@@ -1,7 +1,12 @@
 <%= form_for [:users, @bicycle] do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
+  <br>
   <%= f.label :description %>
   <%= f.text_area  :description %>
+  <br>
+  <%= f.label :category %>
+  <%= f.select :bicycle_category_id, BicycleCategory.all.collect { |c| [c.title, c.id] } %>
+  <br>
   <%= f.submit %>
 <% end %>
