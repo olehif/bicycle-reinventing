@@ -8,5 +8,8 @@
   <%= f.label :category %>
   <%= f.select :bicycle_category_id, BicycleCategory.all.collect { |c| [c.title, c.id] } %>
   <br>
+  <%= f.label :bicycle_photo %>
+  <%= f.file_field :bicycle_photo %>
+  <br>
   <%= f.submit %>
 <% end %>

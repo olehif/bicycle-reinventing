@@ -20,7 +20,10 @@ module Users
     private
 
     def bicycle_params
-      params.require(:bicycle).permit(:name, :description, :bicycle_category_id)
+      params.require(:bicycle).permit(:name,
+                                      :description,
+                                      :bicycle_category_id,
+                                      :bicycle_photo)
             .merge(user_id: current_user.id)
     end
   end
