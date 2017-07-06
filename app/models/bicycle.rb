@@ -17,4 +17,8 @@ class Bicycle < ApplicationRecord
   belongs_to :bicycle_category
 
   mount_uploader :bicycle_photo, BicylePhotoUploader
+
+  def self.search(search)
+    where('name LIKE ?', "%#{search}%")
+  end
 end

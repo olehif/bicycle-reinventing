@@ -1,7 +1,11 @@
 module Users
   class BicyclesController < UsersController
     def index
-      @bicycles = current_user.bicycles
+      @bicycles = current_user.bicycles.search(params[:search])
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
 
     def new

@@ -1,7 +1,7 @@
-My bicycles:
-<% @bicycles.each do |bicycle| %>
-  <h2><%= bicycle.name %></h2>
-  <p><%= truncate(bicycle.description, length: 300) %></p>
-  <%= image_tag bicycle.bicycle_photo.url, style: 'width: 300px' if bicycle.bicycle_photo.present? %>
-  <hr>
+<%= form_tag users_bicycles_path, method: :get, remote: true do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag %>
 <% end %>
+
+My bicycles:
+<%= render 'shared/bicycles_list' %>

@@ -1,6 +1,7 @@
-Bicycles:
-<% @bicycles.each do |bicycle| %>
-  <h2><%= bicycle.name %></h2>
-  <p><%= truncate(bicycle.description, length: 300) %></p>
-  <hr>
+<%= form_tag users_bicycles_path, method: :get, remote: true do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag %>
 <% end %>
+
+Bicycles:
+<%= render 'shared/bicycles_list' %>
