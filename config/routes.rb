@@ -3,4 +3,8 @@ Rails.application.routes.draw do
 
   root 'bicycles#index'
   resources :bicycles, only: [:index, :show]
+
+  namespace :users do
+    resources :bicycles
+  end
 end
