@@ -1,0 +1,6 @@
+Bicycles:
+<% @bicycles.each do |bicycle| %>
+  <h2><%= bicycle.name %></h2>
+  <p><%= truncate(bicycle.description, length: 300) %></p>
+  <hr>
+<% end %>
