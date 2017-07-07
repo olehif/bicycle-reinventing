@@ -2,6 +2,9 @@ module Users
   class BicyclesController < UsersController
     def index
       @bicycles = current_user.bicycles.search(params[:search]).page(params[:page]).per(10)
+      if params[:bicycle_category_id].present?
+        @bicycles = @bicycles.where(bicycle_category_id: params[:bicycle_category_id])
+      end
       respond_to do |format|
         format.html
         format.js
