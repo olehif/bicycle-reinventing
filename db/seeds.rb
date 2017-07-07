@@ -16,7 +16,7 @@ end
   Bicycle.create(
     name: "Bicycle #{i}",
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse nemo ut incidunt rem, neque laudantium iusto maiores repellendus ipsam eligendi?',
-    bicycle_category_id: Category.first.id,
+    bicycle_category_id: BicycleCategory.first.id,
     user_id: User.first.id
   )
 end
