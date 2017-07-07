@@ -1,6 +1,6 @@
 class BicyclesController < ApplicationController
   def index
-    @bicycles = Bicycle.all
+    @bicycles = Bicycle.search(params[:search]).page(params[:page]).per(10)
     respond_to do |format|
       format.html
       format.js

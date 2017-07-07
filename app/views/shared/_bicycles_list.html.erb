@@ -5,4 +5,5 @@
     <%= image_tag bicycle.bicycle_photo.url, style: 'width: 300px' if bicycle.bicycle_photo.present? %>
     <hr>
   <% end %>
+  <%= paginate @bicycles %>
 </div>
