@@ -8,7 +8,9 @@ class BicyclesController < ApplicationController
   end
 
   def show
-    @bicycle = Bicycle.find(params[:id])
+    @bicycle = Bicycle.includes(:bicycle_usages, :bicycle_suggestions).find(params[:id])
     @suggestions = @bicycle.bicycle_suggestions
+    @usages_count = @bicycle.bicycle_usages.count
+    @usage = BicycleUsage.new
   end
 end

@@ -4,6 +4,11 @@
 <br>
 <%= link_to 'Create suggestion', new_bicycle_suggestion_path(id: @bicycle.id) %>
 <hr>
+<p>
+  This bicycle was used <%= @usages_count %> times.
+  <%= link_to 'Mark as used', bicycle_usages_path(bicycle_id: @bicycle.id), method: :post %>
+</p>
+
 <div class="suggestions">
 <h2>Suggestions:</h2>
   <% @suggestions.each do |suggestion| %>

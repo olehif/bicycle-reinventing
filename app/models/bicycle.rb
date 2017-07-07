@@ -14,4 +14,5 @@
 
 class Bicycle < BasicBicycle
   has_many :bicycle_suggestions
+  has_many :bicycle_usages
 end

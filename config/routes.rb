@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     put :merge
   end
 
+  resources :bicycle_usages, only: [:create]
+
   namespace :users do
     resources :bicycles
   end
