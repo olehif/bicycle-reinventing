@@ -14,5 +14,6 @@
 #
 
 class BicycleSuggestion < BasicBicycle
+  validates :bicycle_id, uniqueness: true
   belongs_to :bicycle
 end
