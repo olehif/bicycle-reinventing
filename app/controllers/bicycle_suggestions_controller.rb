@@ -1,4 +1,5 @@
 class BicycleSuggestionsController < ApplicationController
+  before_action :authenticate_user!
   before_action :find_bicycle_suggestion, only: [:destroy, :merge]
 
   def new

@@ -1,4 +1,5 @@
 class BicycleUsagesController < ApplicationController
+  before_action :authenticate_user!
   def create
     @bicycle_usage = BicycleUsage.new({
       user_id: current_user.id,
