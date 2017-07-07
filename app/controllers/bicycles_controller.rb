@@ -8,5 +8,7 @@ class BicyclesController < ApplicationController
   end
 
   def show
+    @bicycle = Bicycle.find(params[:id])
+    @suggestions = @bicycle.bicycle_suggestions
   end
 end

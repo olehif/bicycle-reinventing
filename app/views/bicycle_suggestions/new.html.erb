@@ -1,0 +1,16 @@
+<%= form_for @bicycle_suggestion do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :description %>
+  <%= f.text_area  :description %>
+  <br>
+  <%= f.label :category %>
+  <%= f.select :bicycle_category_id, BicycleCategory.all.collect { |c| [c.title, c.id] } %>
+  <br>
+  <%= f.label :bicycle_photo %>
+  <%= f.file_field :bicycle_photo %>
+  <br>
+  <%= f.hidden_field :bicycle_id, value: @bicycle.id %>
+  <%= f.submit %>
+<% end %>

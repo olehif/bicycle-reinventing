@@ -10,12 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170706121950) do
+ActiveRecord::Schema.define(version: 20170707111244) do
 
   create_table "bicycle_categories", force: :cascade do |t|
     t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "bicycle_suggestions", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "bicycle_photo"
+    t.integer  "bicycle_category_id"
+    t.integer  "bicycle_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["bicycle_category_id"], name: "index_bicycle_suggestions_on_bicycle_category_id"
+    t.index ["bicycle_id"], name: "index_bicycle_suggestions_on_bicycle_id"
   end
 
   create_table "bicycles", force: :cascade do |t|

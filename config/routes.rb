@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   root 'bicycles#index'
   resources :bicycles, only: [:index, :show]
 
+  resources :bicycle_suggestions, only: [:new, :create, :destroy] do
+    put :merge
+  end
+
   namespace :users do
     resources :bicycles
   end

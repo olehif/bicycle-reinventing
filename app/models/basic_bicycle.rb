@@ -12,6 +12,15 @@
 #  bicycle_photo       :string
 #
 
-class Bicycle < BasicBicycle
-  has_many :bicycle_suggestions
+class BasicBicycle < ApplicationRecord
+  self.abstract_class = true
+
+  belongs_to :user
+  belongs_to :bicycle_category
+
+  mount_uploader :bicycle_photo, BicylePhotoUploader
+
+  def self.search(search)
+    where('name LIKE ?', "%#{search}%")
+  end
 end
